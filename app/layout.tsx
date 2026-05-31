@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://vibesift.netlify.app/"),
   title: "VibeSift App",
   description: "Ubah emosi menjadi komunikasi. Aplikasi cerdas untuk menerjemahkan draf pesan kasar menjadi pesan terstruktur secara instan.",
 };
