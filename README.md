@@ -99,4 +99,4 @@ Secara singkat: Anda bebas (dan diizinkan) untuk menggunakan, menyalin, mendistr
 Lihat file `LICENSE` untuk detail lebih lanjut.
 
 ---
-*Dibuat dengan ❤️ untuk Hackathon 2026 oleh Hiday.*
+*Dibuat dengan ❤️ untuk Semuanya 2026 oleh Nara Sa.*
