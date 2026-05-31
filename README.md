@@ -3,6 +3,8 @@
 > **"Ubah emosi menjadi komunikasi."** 
 > Aplikasi cerdas berbasis AI untuk menerjemahkan draf pesan kasar atau emosional Anda menjadi pesan yang terstruktur, profesional, atau kasual secara instan. Dibuat khusus untuk Hackathon/Study Jam.
 
+🌍 **Live Demo:** [https://vibesift.netlify.app/](https://vibesift.netlify.app/)
+
 ---
 
 ## 📖 Latar Belakang Masalah

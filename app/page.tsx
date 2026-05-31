@@ -214,12 +214,12 @@ export default function Home() {
                     key="result"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="h-full"
+                    className="absolute inset-0 p-6 md:p-8 flex flex-col"
                   >
                     <textarea
                       readOnly
                       value={result}
-                      className="w-full h-full bg-transparent text-slate-100 text-base font-normal leading-relaxed resize-none focus:outline-none custom-scrollbar overflow-y-auto"
+                      className="flex-1 w-full bg-transparent text-slate-100 text-base font-normal leading-relaxed resize-none focus:outline-none custom-scrollbar overflow-y-auto"
                     />
                   </motion.div>
                 ) : (
