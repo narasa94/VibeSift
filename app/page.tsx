@@ -11,9 +11,16 @@ const VIBES = [
   { id: "Santai & Kasual", label: "Kasual", icon: Coffee, color: "bg-yellow-500", text: "text-yellow-600", border: "border-yellow-200" },
 ];
 
+const LANGUAGES = [
+  { id: "Indonesia", label: "🇮🇩 ID" },
+  { id: "English", label: "🇬🇧 EN" },
+  { id: "Arab", label: "🇸🇦 AR" },
+];
+
 export default function Home() {
   const [text, setText] = useState("");
   const [vibe, setVibe] = useState(VIBES[0].id);
+  const [language, setLanguage] = useState(LANGUAGES[0].id);
   const [result, setResult] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -40,7 +47,7 @@ export default function Home() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ text, vibe }),
+        body: JSON.stringify({ text, vibe, language }),
       });
       
       const data = await res.json();
@@ -126,6 +133,28 @@ export default function Home() {
                     </button>
                   );
                 })}
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <label className="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-xs">3</span>
+                Bahasa Output
+              </label>
+              <div className="flex gap-3">
+                {LANGUAGES.map((l) => (
+                  <button
+                    key={l.id}
+                    onClick={() => setLanguage(l.id)}
+                    className={`flex-1 py-2 px-3 rounded-xl border font-semibold text-xs md:text-sm transition-all duration-200 ${
+                      language === l.id 
+                        ? 'bg-slate-800 text-white border-slate-800 shadow-md ring-2 ring-slate-800/50 ring-offset-1' 
+                        : 'bg-slate-50 text-slate-500 border-slate-200 hover:bg-slate-100 hover:text-slate-700'
+                    }`}
+                  >
+                    {l.label}
+                  </button>
+                ))}
               </div>
             </div>
 
@@ -218,6 +247,7 @@ export default function Home() {
                   >
                     <textarea
                       readOnly
+                      dir={language === 'Arab' ? 'rtl' : 'ltr'}
                       value={result}
                       className="flex-1 w-full bg-transparent text-slate-100 text-base font-normal leading-relaxed resize-none focus:outline-none custom-scrollbar overflow-y-auto"
                     />

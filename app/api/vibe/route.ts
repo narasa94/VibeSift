@@ -33,13 +33,13 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json();
-    const { text, vibe } = body;
+    const { text, vibe, language = "Indonesia" } = body;
 
     if (!text || !vibe) {
       return Response.json({ error: 'Text and vibe are required' }, { status: 400 });
     }
 
-    const prompt = `Kamu adalah asisten komunikasi ahli. Tugasmu adalah mengubah draf pesan kasar dari pengguna menjadi pesan yang terstruktur dengan nada bicara: ${vibe}. Pertahankan makna dan tujuan asli pesan, namun perbaiki tata bahasa, tingkat kesopanan, dan profesionalismenya. Berikan HANYA teks hasilnya saja, tanpa basa-basi atau penjelasan tambahan.\n\nPesan kasar: ${text}`;
+    const prompt = `Kamu adalah asisten komunikasi ahli. Tugasmu adalah mengubah draf pesan kasar dari pengguna menjadi pesan yang terstruktur dengan nada bicara: ${vibe}, dan terjemahkan hasilnya secara natural ke dalam bahasa: ${language}. Pertahankan makna dan tujuan asli pesan, namun perbaiki tata bahasa, tingkat kesopanan, dan profesionalismenya. Berikan HANYA teks hasilnya saja dalam bahasa ${language}, tanpa basa-basi, tanpa pembuka/penutup, tanpa tanda kutip ekstra, atau penjelasan tambahan.\n\nPesan kasar: ${text}`;
 
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
