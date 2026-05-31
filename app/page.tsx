@@ -94,7 +94,7 @@ export default function Home() {
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 placeholder="Ketik atau paste pesan kasarmu di sini...&#10;(contoh: Saya nggak mau ngerjain ini karena bukan tugas saya!)"
-                className="w-full h-48 md:h-64 p-4 rounded-2xl bg-slate-50 border border-slate-200 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none shadow-inner"
+                className="w-full min-h-[250px] md:min-h-[300px] p-4 rounded-2xl bg-slate-50 border border-slate-200 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none shadow-inner overflow-y-auto"
               />
             </div>
 
@@ -169,7 +169,7 @@ export default function Home() {
           </div>
 
           {/* Output Section */}
-          <div className="flex-1 flex flex-col bg-slate-900 rounded-3xl shadow-xl overflow-hidden relative border border-slate-800">
+          <div className="flex-1 flex flex-col min-h-[350px] md:min-h-0 bg-slate-900 rounded-3xl shadow-xl overflow-hidden relative border border-slate-800">
             <div className="px-6 py-4 border-b border-slate-800 flex items-center justify-between bg-slate-900/50 backdrop-blur-sm z-10">
               <div className="flex items-center gap-3">
                 <div className="flex gap-1.5">
@@ -219,7 +219,7 @@ export default function Home() {
                     <textarea
                       readOnly
                       value={result}
-                      className="w-full h-full bg-transparent text-slate-100 text-lg md:text-xl font-medium leading-relaxed resize-none focus:outline-none custom-scrollbar"
+                      className="w-full h-full bg-transparent text-slate-100 text-base font-normal leading-relaxed resize-none focus:outline-none custom-scrollbar overflow-y-auto"
                     />
                   </motion.div>
                 ) : (
